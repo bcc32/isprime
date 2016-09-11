@@ -6,7 +6,7 @@ const port = process.argv[2] || process.env['PORT'] || 3000;
 
 var app = express();
 
-app.use(morgan('dev'));
+app.use(morgan('common'));
 
 app.set('views', './views');
 app.set('view engine', 'pug');
