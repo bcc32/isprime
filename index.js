@@ -1,8 +1,7 @@
-var bignum  = require('bignum');
 var express = require('express');
 var morgan  = require('morgan');
+var isPrime = require('./isPrime');
 
-const maxDigits = 50;
 const port = process.argv[2] || process.env['PORT'] || 3000;
 
 var app = express();
@@ -17,10 +16,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/is_prime/:n', (req, res) => {
-    var n = req.params.n;
-    // only up to fifty digits
-    if (n.length <= maxDigits) {
-        res.send(bignum(n).probPrime());
+    var n = +req.params.n;
+    if (n <= Number.MAX_SAFE_INTEGER) {
+        res.send(isPrime(+n));
         res.end();
     } else {
         res.status(400);
