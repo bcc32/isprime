@@ -1,0 +1,26 @@
+{
+  "name": "prime-checker",
+  "version": "1.0.0",
+  "description": "A website that lets the user check whether a given natural number is prime",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcc32/prime-checker.git"
+  },
+  "author": "Aaron L. Zeng <a2z@mit.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bcc32/prime-checker/issues"
+  },
+  "homepage": "https://github.com/bcc32/prime-checker#readme",
+  "dependencies": {
+    "bignum": "^0.12.5",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta6"
+  }
+}
