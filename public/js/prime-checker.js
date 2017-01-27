@@ -14,4 +14,11 @@ $(function() {
             $('#result').text('');
         }
     });
+    $(document).keyup(function(e) {
+        if (e.keyCode === 81) { // q
+            $('#n').focus();
+        } else if (e.keyCode === 27) { // escape
+            $('#n').blur().val('');
+        }
+    });
 });
