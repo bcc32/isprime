@@ -6,8 +6,9 @@ $(function() {
                 .done(function(data) {
                     $('#result').text(data ? 'Prime' : 'Composite');
                 })
-                .fail(function() {
-                    $('#result').text('Error');
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    var data = JSON.parse(jqXHR.responseText);
+                    $('#result').text('Error: ' + data.error);
                 });
         } else {
             $('#result').text('');
