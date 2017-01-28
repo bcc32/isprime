@@ -18,8 +18,7 @@ app.get('/', (req, res) => {
 app.get('/is_prime/:n', (req, res) => {
     var n = +req.params.n;
     if (0 <= n && n <= Number.MAX_SAFE_INTEGER) {
-        res.send(isPrime(+n));
-        res.end();
+        res.send(isPrime(n));
     } else if (Number.isNaN(n)) {
         res.status(400).json({error: 'not a number', n: req.params.n});
     } else {
